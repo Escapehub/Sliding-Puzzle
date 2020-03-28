@@ -1,10 +1,11 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Board.hpp"
 
 int main() 
 {
-    sf::RenderWindow window(sf::VideoMode(800, 800), "Sliding Puzzle");
-
+    sf::RenderWindow window(sf::VideoMode(500, 500), "Sliding Puzzle");
+    Board board;
     while (window.isOpen()) 
     {
         window.clear();
@@ -14,7 +15,7 @@ int main()
             if (event.type == sf::Event::Closed || sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
                 window.close();
         }
-
+        window.draw(board.getBoard());
         window.display();
 
     }

@@ -10,11 +10,11 @@ public:
 
     }
 
-    Tile(std::string tileNumber) 
+    Tile(int i) 
     {
-        number.setString(tileNumber);
-        numberFont.loadFromFile("font/slidingpuzzle.ttf");
-        number.setFont(numberFont);
+        _tile.setSize(sf::Vector2f(18.75f,18.75f));
+
+        setNumber(i);
     }
 
     ~Tile() 
@@ -24,11 +24,18 @@ public:
 
     sf::RectangleShape getTile() 
     {
-        return square;
+        return _tile;
     }
 
 private:
-    sf::RectangleShape square;
+    sf::RectangleShape _tile;
     sf::Text number;
     sf::Font numberFont;
+
+    void setNumber(int tileNumber) 
+    {
+        number.setString(std::to_string(tileNumber));
+        numberFont.loadFromFile("font/slidingpuzzle.ttf");
+        number.setFont(numberFont);
+    }
 };
