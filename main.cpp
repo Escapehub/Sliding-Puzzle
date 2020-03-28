@@ -1,11 +1,13 @@
 #include <SFML/Graphics.hpp>
 #include <iostream>
 #include "Board.hpp"
+#include "Tile.hpp"
 
 int main() 
 {
     sf::RenderWindow window(sf::VideoMode(500, 500), "Sliding Puzzle");
     Board board;
+    Tile tile(1);
     while (window.isOpen()) 
     {
         window.clear();
@@ -16,6 +18,7 @@ int main()
                 window.close();
         }
         window.draw(board.getBoard());
+        window.draw(tile.getTile());
         window.display();
 
     }

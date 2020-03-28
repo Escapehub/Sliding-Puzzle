@@ -12,7 +12,7 @@ public:
 
     Tile(int i) 
     {
-        _tile.setSize(sf::Vector2f(18.75f,18.75f));
+        _tile.setSize(sf::Vector2f(75.f,75.f));
 
         setNumber(i);
     }
